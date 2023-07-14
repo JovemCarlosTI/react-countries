@@ -50,12 +50,14 @@ export default function ReactCountriesPage() {
           <h3 className="text-center font-semibold text-sm">
               {visitedCountries.length + (visitedCountries.length === 1 ? ' país visitado' : ' países visitados')}
           </h3>
+          <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between">
           {
             filteredCountries.map(country => {
             const isVisited = visitedCountries.indexOf(country.id) !== -1;
             return <Country isVisited={isVisited} key={country.id} onCountryClick={toggleVisitedCountry}>{country}</Country>
               })
           }
+          </div>
         </Countries>
       </Main>
 
